@@ -1,4 +1,4 @@
-
+var score = 0;
 
 var startButton = document.querySelector("#startButton");
 var timeEl = document.querySelector("#timerText");
