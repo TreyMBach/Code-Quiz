@@ -1,36 +1,157 @@
+
+
+/* Styles for root element */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    --fontSize: 1.7rem;
+    --mainBG: rgb(10, 170, 170);
+    --questionSize: 2.5rem;
+    --scrnBrdr: .5rem;
+}
+    
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+    min-height: 100vh;
+}    
 
+/* Styles for <header> */
+header {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--mainBG);
+        align-items: center;
+    }
+    
+h1 {
+        font-size: 3.1rem;
+        display: inline;
+        padding-top: var(--scrnBrdr);
+        padding-bottom: var(--scrnBrdr);
 }
-
-.navContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.contentContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-}
-
-content h2{
-
-    font-weight: 200px;
-
-}
-
-ul{
-    list-style-type: none;
-    padding: 0;
-}
-
-#answerList{
-    text-align: center;
-}
-
+    /* Style for score list button */
+    .head button {
+        border: none;
+        font-size: var(--fontSize);
+        display: inline;
+        color: black;
+        background-color: var(--mainBG);
+        padding: var(--scrnBrdr);
+    }
+    .head button:hover {
+        border: .2rem dashed black;
+        cursor: pointer;
+    }
+    
+    /* Style for timer */
+    .head p {
+        font-size: var(--fontSize);
+        display: inline;
+    }
+    
+    /* Style for Start Button, Questions, and Answers */
+    #startButton:hover {
+        cursor: pointer;
+    }
+    #startContain {
+        flex-direction: column;
+    }
+    #startContain p {
+        font-size: var(--fontSize);
+        padding: var(--questionSize) var(--scrnBrdr) var(--questionSize) var(--scrnBrdr);
+        text-align: center;
+    }
+    .qa {
+        font-size: var(--questionSize);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--scrnBrdr);
+        padding-top: 10%;
+    }
+    .qa ul {
+        font-size: var(--questionSize);
+        padding-bottom: var(--questionSize);
+    }
+    .qa li {
+        list-style: circle inside;
+    }
+    .qa li button{
+        background-color: white;
+        border: none;
+        font-size: var(--fontSize);
+        padding: var(--questionSize) var(--scrnBrdr) var(--scrnBrdr) var(--scrnBrdr);
+    }
+    .qa li button:hover {
+        border: .2rem dashed var(--mainBG);
+        cursor: pointer;
+    }
+    .qa li button:focus {
+        outline: none;
+        border: .2rem dashed var(--mainBG);
+    }
+    
+    /* Style for score */
+    
+    .playerScore {
+        font-size: var(--questionSize);
+        background-color: var(--mainBG);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: var(--scrnBrdr);
+    }
+    #playerScore {
+        font-size: var(--questionSize);
+    }
+    
+    /* Styles for high score list */
+    .highScores {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #highScores h2 {
+        font-size: var(--questionSize);
+        padding: var(--questionSize) var(--scrnBrdr) var(--scrnBrdr) var(--scrnBrdr);
+    }
+    #highScores ul {
+        padding-bottom: var(--questionSize);
+    }
+    #highScores li {
+        display: inline;
+        font-size: var(--fontSize);
+        padding: var(--scrnBrdr);
+    }
+    #scoreHide {
+        font-size: var(--questionSize);
+    }
+    #scoreHide:hover {
+        cursor: pointer;
+    }
+    /* Style for correct and incorrect Alerts */
+    #correctAlert {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--questionSize) var(--scrnBrdr) var(--questionSize) var(--scrnBrdr);
+        font-size: var(--questionSize);
+        font-style: italic;
+        background-color: rgb(4, 202, 4);
+        opacity: 65%;
+    }
+    #incorrectAlert {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--questionSize) var(--scrnBrdr) var(--questionSize) var(--scrnBrdr);
+        font-size: var(--questionSize);
+        font-style: italic;
+        background-color: rgb(224, 4, 4);
+        opacity: 65%;
+    }
+    /* Style used to hide questions */
+    #q1, #q2, #q3, #q4, #q5, #q6, #q7, #q8, #q9, #q10, #highScores, #correctAlert, #incorrectAlert {
+        display: none;
+    }
