@@ -152,6 +152,6 @@ h1 {
         opacity: 65%;
     }
     /* Style used to hide questions */
-    #q1, #q2, #q3, #q4, #q5, #q6, #q7, #q8, #q9, #q10, #highScores, #correctAlert, #incorrectAlert {
+    #question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8, #question9, #question10, #highScores, #correctAlert, #incorrectAlert {
         display: none;
     }

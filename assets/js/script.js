@@ -26,15 +26,15 @@ function timeStart() {
 };
 function timesUp() {
     time = 0;
-    q2();
-    q3();
-    q4();
-    q5();
-    q6();
-    q7();
-    q8();
-    q9();
-    q10();
+    question2();
+    question3();
+    question4();
+    question5();
+    question6();
+    question7();
+    question8();
+    question9();
+    question10();
     end();
 }
 // Functions for score
@@ -42,52 +42,52 @@ function startScore() {
     document.getElementById(`playerScore`).innerHTML = `Your Score: ${currentScore}`;
 };
 
-// Functions for question display
-function startQuestion() {
+// Functions for questionuestion display
+function startquestionuestion() {
     document.getElementById(`startContain`).style.display = `none`;
-    document.getElementById(`q1`).style.display = `flex`;
+    document.getElementById(`questionuestion1`).style.display = `flex`;
     currentScore = 0;
 };
-function q2() {
-    document.getElementById(`q1`).style.display = `none`;
-    document.getElementById(`q2`).style.display = `flex`;
+function question2() {
+    document.getElementById(`question1`).style.display = `none`;
+    document.getElementById(`question2`).style.display = `flex`;
 };
-function q3() {
-    document.getElementById(`q2`).style.display = `none`;
-    document.getElementById(`q3`).style.display = `flex`;
+function question3() {
+    document.getElementById(`question2`).style.display = `none`;
+    document.getElementById(`question3`).style.display = `flex`;
 };
-function q4() {
-    document.getElementById(`q3`).style.display = `none`;
-    document.getElementById(`q4`).style.display = `flex`;
+function question4() {
+    document.getElementById(`question3`).style.display = `none`;
+    document.getElementById(`question4`).style.display = `flex`;
 };
-function q5() {
-    document.getElementById(`q4`).style.display = `none`;
-    document.getElementById(`q5`).style.display = `flex`;
+function question5() {
+    document.getElementById(`question4`).style.display = `none`;
+    document.getElementById(`question5`).style.display = `flex`;
 };
-function q6() {
-    document.getElementById(`q5`).style.display = `none`;
-    document.getElementById(`q6`).style.display = `flex`;
+function question6() {
+    document.getElementById(`question5`).style.display = `none`;
+    document.getElementById(`question6`).style.display = `flex`;
 };
-function q7() {
-    document.getElementById(`q6`).style.display = `none`;
-    document.getElementById(`q7`).style.display = `flex`;
+function question7() {
+    document.getElementById(`question6`).style.display = `none`;
+    document.getElementById(`question7`).style.display = `flex`;
 };
-function q8() {
-    document.getElementById(`q7`).style.display = `none`;
-    document.getElementById(`q8`).style.display = `flex`;
+function question8() {
+    document.getElementById(`question7`).style.display = `none`;
+    document.getElementById(`question8`).style.display = `flex`;
 };
-function q9() {
-    document.getElementById(`q8`).style.display = `none`;
-    document.getElementById(`q9`).style.display = `flex`;
+function question9() {
+    document.getElementById(`question8`).style.display = `none`;
+    document.getElementById(`question9`).style.display = `flex`;
 };
-function q10() {
-    document.getElementById(`q9`).style.display = `none`;
-    document.getElementById(`q10`).style.display = `flex`;
+function question10() {
+    document.getElementById(`question9`).style.display = `none`;
+    document.getElementById(`question10`).style.display = `flex`;
 };
 // Function for start of evaluation
 function start() {
     timeStart();
-    startQuestion();
+    startquestionuestion();
     startScore();
 }
 
@@ -98,40 +98,40 @@ function correct() {
     document.getElementById(`correctAlert`).style.display = `flex`;
     document.getElementById(`incorrectAlert`).style.display = `none`;
 };
-function q2C() {
-    q2();
+function question2C() {
+    question2();
     correct();
 };
-function q3C() {
-    q3();
+function question3C() {
+    question3();
     correct();
 };
-function q4C() {
-    q4();
+function question4C() {
+    question4();
     correct();
 };
-function q5C() {
-    q5();
+function question5C() {
+    question5();
     correct();
 };
-function q6C() {
-    q6();
+function question6C() {
+    question6();
     correct();
 };
-function q7C() {
-    q7();
+function question7C() {
+    question7();
     correct();
 };
-function q8C() {
-    q8();
+function question8C() {
+    question8();
     correct();
 };
-function q9C() {
-    q9();
+function question9C() {
+    question9();
     correct();
 };
-function q10C() {
-    q10();
+function question10C() {
+    question10();
     correct();
 };
 function endC() {
@@ -148,40 +148,40 @@ function incorrect() {
     document.getElementById(`incorrectAlert`).style.display = `flex`;
     document.getElementById(`correctAlert`).style.display = `none`;
 };
-function q2I() {
-    q2();
+function question2I() {
+    question2();
     incorrect();
 };
-function q3I() {
-    q3();
+function question3I() {
+    question3();
     incorrect();
 };
-function q4I() {
-    q4();
+function question4I() {
+    question4();
     incorrect();
 };
-function q5I() {
-    q5();
+function question5I() {
+    question5();
     incorrect();
 };
-function q6I() {
-    q6();
+function question6I() {
+    question6();
     incorrect();
 };
-function q7I() {
-    q7();
+function question7I() {
+    question7();
     incorrect();
 };
-function q8I() {
-    q8();
+function question8I() {
+    question8();
     incorrect();
 };
-function q9I() {
-    q9();
+function question9I() {
+    question9();
     incorrect();
 };
-function q10I() {
-    q10();
+function question10I() {
+    question10();
     incorrect();
 };
 function endI() {
@@ -199,7 +199,7 @@ function end() {
     var list = document.createElement(`li`);
     list.innerHTML = `${name} - ${currentScore}`;
     document.getElementById(`playerList`).appendChild(list);
-    document.getElementById(`q10`).style.display = `none`;
+    document.getElementById(`question10`).style.display = `none`;
     document.getElementById(`startContain`).style.display = `flex`;
     scoreButton();
     startScore();
@@ -215,63 +215,63 @@ document.getElementById(`scoreHide`).onclick = scoreHide;
 // Function to start evaluation
 document.getElementById(`startButton`).onclick = start;
 
-// Functions for each question and response
-// Question 1
-document.getElementById(`c1`).onclick = q2C;
-document.getElementById(`i11`).onclick = q2I;
-document.getElementById(`i12`).onclick = q2I;
-document.getElementById(`i13`).onclick = q2I;
+// Functions for each questionuestion and response
+// questionuestion 1
+document.getElementById(`correct1`).onclick = question2C;
+document.getElementById(`wrong11`).onclick = question2I;
+document.getElementById(`wrong12`).onclick = question2I;
+document.getElementById(`wrong13`).onclick = question2I;
 
-// Question 2
-document.getElementById(`c2`).onclick = q3C;
-document.getElementById(`i21`).onclick = q3I;
-document.getElementById(`i22`).onclick = q3I;
-document.getElementById(`i23`).onclick = q3I;
+// questionuestion 2
+document.getElementById(`correct2`).onclick = question3C;
+document.getElementById(`wrong21`).onclick = question3I;
+document.getElementById(`wrong22`).onclick = question3I;
+document.getElementById(`wrong23`).onclick = question3I;
 
-// Question 3
-document.getElementById(`c3`).onclick = q4C;
-document.getElementById(`i31`).onclick = q4I;
-document.getElementById(`i32`).onclick = q4I;
-document.getElementById(`i33`).onclick = q4I;
+// questionuestion 3
+document.getElementById(`correct3`).onclick = question4C;
+document.getElementById(`wrong31`).onclick = question4I;
+document.getElementById(`wrong32`).onclick = question4I;
+document.getElementById(`wrong33`).onclick = question4I;
 
-// Question 4
-document.getElementById(`c4`).onclick = q5C;
-document.getElementById(`i41`).onclick = q5I;
-document.getElementById(`i42`).onclick = q5I;
-document.getElementById(`i43`).onclick = q5I;
+// questionuestion 4
+document.getElementById(`correct4`).onclick = question5C;
+document.getElementById(`wrong41`).onclick = question5I;
+document.getElementById(`wrong42`).onclick = question5I;
+document.getElementById(`wrong43`).onclick = question5I;
 
-// Question 5
-document.getElementById(`c5`).onclick = q6C;
-document.getElementById(`i51`).onclick = q6I;
-document.getElementById(`i52`).onclick = q6I;
-document.getElementById(`i53`).onclick = q6I;
+// questionuestion 5
+document.getElementById(`correct5`).onclick = question6C;
+document.getElementById(`wrong51`).onclick = question6I;
+document.getElementById(`wrong52`).onclick = question6I;
+document.getElementById(`wrong53`).onclick = question6I;
 
-// Question 6
-document.getElementById(`c6`).onclick = q7C;
-document.getElementById(`i61`).onclick = q7I;
-document.getElementById(`i62`).onclick = q7I;
-document.getElementById(`i63`).onclick = q7I;
+// questionuestion 6
+document.getElementById(`correct6`).onclick = question7C;
+document.getElementById(`wrong61`).onclick = question7I;
+document.getElementById(`wrong62`).onclick = question7I;
+document.getElementById(`wrong63`).onclick = question7I;
 
-// Question 7
-document.getElementById(`c7`).onclick = q8C;
-document.getElementById(`i71`).onclick = q8I;
-document.getElementById(`i72`).onclick = q8I;
-document.getElementById(`i73`).onclick = q8I;
+// questionuestion 7
+document.getElementById(`correct7`).onclick = question8C;
+document.getElementById(`wrong71`).onclick = question8I;
+document.getElementById(`wrong72`).onclick = question8I;
+document.getElementById(`wrong73`).onclick = question8I;
 
-// Question 8
-document.getElementById(`c8`).onclick = q9C;
-document.getElementById(`i81`).onclick = q9I;
-document.getElementById(`i82`).onclick = q9I;
-document.getElementById(`i83`).onclick = q9I;
+// questionuestion 8
+document.getElementById(`correct8`).onclick = question9C;
+document.getElementById(`wrong81`).onclick = question9I;
+document.getElementById(`wrong82`).onclick = question9I;
+document.getElementById(`wrong83`).onclick = question9I;
 
-// Question 9
-document.getElementById(`c9`).onclick = q10C;
-document.getElementById(`i91`).onclick = q10I;
-document.getElementById(`i92`).onclick = q10I;
-document.getElementById(`i93`).onclick = q10I;
+// questionuestion 9
+document.getElementById(`correct9`).onclick = question10C;
+document.getElementById(`wrong91`).onclick = question10I;
+document.getElementById(`wrong92`).onclick = question10I;
+document.getElementById(`wrong93`).onclick = question10I;
 
-// Question 10
-document.getElementById(`c10`).onclick = endC;
-document.getElementById(`i101`).onclick = endI;
-document.getElementById(`i102`).onclick = endI;
-document.getElementById(`i103`).onclick = endI;
+// questionuestion 10
+document.getElementById(`correct10`).onclick = endC;
+document.getElementById(`wrong101`).onclick = endI;
+document.getElementById(`wrong102`).onclick = endI;
+document.getElementById(`wrong103`).onclick = endI;
