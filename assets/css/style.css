@@ -1,15 +1,15 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
-
+/* Sets the variables for background color for when a guess is correct. */
 :root{
     background-color: #20bf55;
     background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
     --hue-neutral: 200;
     --hue-wrong: 0;
-    --hue-correct: 145;
+    --hue-correct: 130;
 }
 
+/* Create optimal boxes and net the new font */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,6 +27,7 @@ h2{
     font-size: 12px;
 }
 
+/* Creates the flex container */
 .container{
     display: flex;
     width: 100vw;
@@ -38,6 +39,7 @@ h2{
     padding: 2rem;
 }
 
+/* Anything with these following class will have the certain display flex properties such as flex-column and justify-content on center. */
 .flex-column {
     display: flex;
     flex-direction: column;
@@ -56,10 +58,12 @@ h2{
     text-align: center;
 }
 
+/* To be able manipulate button text on screen */
 .hidden{
     display: none;
 }
 
+/* To be able to change the button color qualities */
 .btn{
     font-size: 24px;
     padding: 20px 0;
@@ -72,6 +76,20 @@ h2{
     background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
     border-radius: 4px;
 }
+
+/* This allowed me to put the buttons in a grid no matter how many "answer buttons" there would be */
+.btn-grid{
+    display:grid;
+    grid-template-columns:repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    background: white;
+    border-radius: 13px;
+    border: 5px solid black;
+}
+
+/* When hovered the buttons had an effect to move out and get bigger bringing reactive feeling */
 .btn:hover{
     cursor:pointer;
     box-shadow: 0 4px 14px 0 (grey);
@@ -79,6 +97,7 @@ h2{
     transform: scale(1.2);
 }
 
+/* If I ever disabled a button it would not allow the cursor to click on it and not transform it */
 .btn[disabled]:hover{
     cursor:not-allowed;
     box-shadow: none;
@@ -92,29 +111,19 @@ h2{
     margin-bottom: 16px;
 }
 
-.btn-grid{
-    display:grid;
-    grid-template-columns:repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0px;
-    padding: 10px;
-    background: white;
-    border-radius: 13px;
-    border: 5px solid black;
-}
-
+/* If the quess was right or wrong it would change to have a background color of green or red */
 .correct{
     color: black;
-    opacity: 50%;
+    opacity: 100%;
     background: lightgreen;
 }
 
 .wrong{
-    opacity: 50%;
+    opacity: 100%;
     background: red;
 }
 
-.score{
+#scoreText{
     color: white;
     font-size: 32px;
     font-weight: bold;

@@ -10,21 +10,32 @@
     <link rel="stylesheet" href="assets/css/style.css">
  </head>
  <body>
+    <!--This would end up being the container for all of the following elements-->
     <div class="container">
+
+        <!--This would be the home which would allow for a the flex column-center for all the elements.-->
         <div id="home" class="flex-column flex-center">
+
+            <!--This would be the ready text-->
             <h1 id="readyText">Are you ready?</h1>
+
+            <!--Certain buttons that had start next and highscore each with a class to start out with certain qualities like hidden if i wanted to manipulate with JS.-->
             <button id="startButton" class="start-btn btn">Play</button>
             <button id="nextButton" class="next-btn btn hidden">Next</button>
-            <button id="highscore-btn" class="btn hidden">High Scores</button>
+            <button id="highscore-btn" class="btn">High Scores</button>
+
+            <!--Timer and Score Counter-->
             <h1 id="timerText">Timer:</h1>
-            <div class="score">Score:</div>
+            <div id="scoreText">Score:</div>
+
+            <!--Question container for flex box for the question and answer buttons intitially starting as hidden till we click the start button.-->
             <div id="question-container" class="hidden">
                 <div id="question">Question</div>
                 <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
+                    <button id="guess1" class="btn">Answer 1</button>
+                    <button id="guess2" class="btn">Answer 2</button>
+                    <button id="guess3" class="btn">Answer 3</button>
+                    <button id="guess4" class="btn">Answer 4</button>
                 </div>
             </div>
         </div>
@@ -32,6 +43,7 @@
 
     
  </body>
+
 
  <script src="./assets/js/script.js"></script>
  </html>

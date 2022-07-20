@@ -1,3 +1,5 @@
+
+// Variables to get elements off of the HTML index.
 var startButton = document.getElementById('startButton')
 var nextButton = document.getElementById('nextButton')
 var questionContainerEl = document.getElementById('question-container')
@@ -6,12 +8,7 @@ var timeEl = document.getElementById('timerText')
 var questionEl = document.getElementById('question')
 var answerButtonsEl = document.getElementById('answer-buttons')
 
-var shuffledQuestions, currentQuestionNumber
-
-var secondsLeft = 15;
-var score = 0;
-console.log(score)
-
+// Array of questions along with guess and whether the guess is correct or not.
 var questions = [
     {
         question: 'What does HTML Stand for?',
@@ -79,17 +76,28 @@ var questions = [
 
 ]
 
+// create variables in order to shuffle questions and have a constant question number to keep it for random 
+var shuffledQuestions, currentQuestionNumber
+
+// Timer and Score Counter
+var secondsLeft = 15;
+var score = 0;
+
+console.log(score)
 
 
+// Initially had a Next Button which would end up being scrapped kept just incase I needed during debugging process.
 nextButton.addEventListener('click', () =>{
     currentQuestionNumber++
     nextQuestion()
 });
+// Start button to start the quiz and timer.
 startButton.addEventListener("click", () => {
     startQuiz();
     setTime();
 });
 
+// This would start everything included randomizing the questions into random order and displaying the first question
 function startQuiz(){
     console.log('started')
     console.log(secondsLeft)
@@ -101,11 +109,13 @@ function startQuiz(){
     nextQuestion()
 }
 
+// Would reset the state so it wouldnt have any color propierty from previous guess then show the next question from the randomizing index.
 function nextQuestion(){
     resetState()
     showQuestion(shuffledQuestions[currentQuestionNumber]);
 }
 
+// This would show the question through the question element along with making a button and giving it a data set to be a correct answer and would be made a button with answers inside.
 function showQuestion(question){
     questionEl.innerText = question.question
     question.answers.forEach(answer => {
@@ -121,6 +131,7 @@ function showQuestion(question){
     })
 }
 
+// Would reset the status so the next question would be ready and no color from previous question.
 function resetState(){
     clearStatusClass(document.body)
     nextButton.classList.add('hidden')
@@ -130,11 +141,11 @@ function resetState(){
 
 }
 
-
+// Selecting the buttons and if its correct it will add a point and from each array and each button it will find if its true or not.
 function selectAnswer(e){
     var selectedButton = e.target
     var correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+
     Array.from(answerButtonsEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -144,19 +155,29 @@ function selectAnswer(e){
         startButton.innerText = 'Restart'
         startButton.classList.remove('hidden')
     }
+    if (correct){
+        score++;
+    }
+
 }
 
+
+// Will determine if correct and will move to the next question
 function setStatusClass(element, correct){
     clearStatusClass(element)
+
     if (correct) {
         element.classList.add('correct')
-        score = score + 1;
+        scoreText.innerText = "Your score is: " + score;
         console.log(score)
-    } else {
+        currentQuestionNumber++;
+        nextQuestion();
+    } else if (wrong) {
         element.classList.add('wrong')
     }
 }
 
+// will clear if the button had the class correct or wrong.
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
@@ -164,6 +185,7 @@ function clearStatusClass(element) {
 
 function setTime() {
   // Sets interval in variable
+  
   var secondsLeft = 15;
   var timerInterval = setInterval(function() {
     secondsLeft--;
@@ -173,17 +195,23 @@ function setTime() {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
-    }
-    if (secondsLeft < .5) {
-        endTime();
+      endQuiz();
     }
 
   }, 1000);
 }
 
-function endTime(){
-
+// Would try to end the quiz and show the score list along as attempt to store local.
+function endQuiz(){
+    startButton.classList.remove('hidden')
+    answerButtonsEl.classList.add('hidden')
+    questionContainerEl.classList.add('hidden')
+    clearInterval(secondsLeft);
+    var playerName = prompt('Please enter your name:');
+    var playerList = document.createElement('li');
+    playerList.innerHTML = '${playerName} Score: ${time}';
+    document.getElementById('scoreList').appendChild(playerList);
+    document.getElementById('startPage').style.display = 'flex';
 }
-
 
   
