@@ -33,3 +33,4 @@ Timer is currently bugged as it wont restart with the game.
 Doesn't seem that the score counter will work it will work no matter what guess you hit.
 Haven't attempted to be get the score to stay in local storage.
 
+link to the live application: https://treymbach.github.io/Code-Quiz/
